@@ -1,4 +1,4 @@
-# Beatkhor
+# Beatkhor ![Tests](https://github.com/beatkhor/beatkhor/actions/workflows/tests.yml/badge.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
