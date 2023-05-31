@@ -4,6 +4,7 @@ module.exports = {
         '**/src/**/*.{ts,tsx}',
         '!**/node_modules/**',
         '!**/vendor/**',
+        '!**/models/**',
         '!./jest.config.js',
         '!**/src/main.ts',
         '!**/**module.ts'
