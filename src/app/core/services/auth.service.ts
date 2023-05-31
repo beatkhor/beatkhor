@@ -1,10 +1,10 @@
+import { environment } from '@environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { LocalStorageService } from './local-storage.service';
 import { LoginResponseDTO } from '../models/authentication';
-import { environment } from '@environments/environment';
 import { CustomResponse } from '../models/response';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class AuthService {
   ) { }
 
   /**
-   * 
+   * Send the credentials and receive the auth token and user profile
    * @param identifier The username or the email
    * @param password  User's password
    * @returns `Observable` login http request
