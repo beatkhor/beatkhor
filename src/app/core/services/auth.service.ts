@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { LocalStorageService } from './local-storage.service';
 import { LoginResponseDTO } from '../models/authentication';
-import { environment } from 'src/environments/environment';
+import { environment } from '@environments/environment';
 import { CustomResponse } from '../models/response';
 
 @Injectable({

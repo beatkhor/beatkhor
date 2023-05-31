@@ -7,6 +7,9 @@ import { NgModule } from '@angular/core';
   imports: [
     CommonModule,
     HttpClientModule,
+  ],
+  exports: [
+    HttpClientModule
   ]
 })
 export class CoreModule { }
