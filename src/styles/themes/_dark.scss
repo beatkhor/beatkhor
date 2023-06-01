@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+.dark-theme {
+    color: rgba(#fff, 0.95);
+    background-color: #1c1c1c;
+    overscroll-behavior: contain;
+    overflow: none;
+
+    a {
+        $theme: map-get($bk-dark, 'material');
+        $primaryPalette: map-get($theme, 'primary');
+        color: map-get($primaryPalette, 500);
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white !important;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        margin: 16px 0;
+        border-bottom: 1px solid rgba(#fff, $alpha: 0.1);
+    }
+
+    @include mat.core-color(map-get($bk-dark, 'material'));
+    @include mat.button-color(map-get($bk-dark, 'material'));
+    @include mat.form-field-color(map-get($bk-dark, 'material'));
+    @include mat.input-color(map-get($bk-dark, 'material'));
+    @include mat.snack-bar-color(map-get($bk-dark, 'material'));
+    @include mat.toolbar-color(map-get($bk-dark, 'material'));
+    @include mat.dialog-color(map-get($bk-dark, 'material'));
+    @include mat.list-color(map-get($bk-dark, 'material'));
+    @include mat.autocomplete-color(map-get($bk-dark, 'material'));
+    @include mat.progress-bar-color(map-get($bk-dark, 'material'));
+    @include mat.sidenav-color(map-get($bk-dark, 'material'));
+    @include mat.menu-color(map-get($bk-dark, 'material'));
+    @include mat.checkbox-color(map-get($bk-dark, 'material'));
+    @include mat.tabs-color(map-get($bk-dark, 'material'));
+    @include mat.badge-color(map-get($bk-dark, 'material'));
+}

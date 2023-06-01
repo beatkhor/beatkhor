@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+@function create-dark-bk-theme($primary-palette, $accent-palette, $warn-palette, $type: 'light') {
+    $material-primary: mat.define-palette($primary-palette);
+    $material-accent: mat.define-palette($accent-palette, A200, A100, A400);
+    $material-warn: mat.define-palette($warn-palette);
+
+    $material-theme: mat.define-dark-theme((color: (primary: $material-primary,
+                accent: $material-accent,
+                warn: $material-warn )));
+
+    $result: ('material': $material-theme,
+        'primary': $primary-palette,
+        'accent': $accent-palette,
+        'warn': $warn-palette );
+
+    @return $result;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}

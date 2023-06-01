@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red-palette, 'dark');
+
+@include mat.button-theme(map-get($bk-dark, 'material'));
+@include mat.form-field-theme(map-get($bk-dark, 'material'));
+@include mat.input-theme(map-get($bk-dark, 'material'));
+@include mat.snack-bar-theme(map-get($bk-dark, 'material'));
+@include mat.progress-spinner-theme(map-get($bk-dark, 'material'));
+@include mat.toolbar-theme(map-get($bk-dark, 'material'));
+@include mat.dialog-theme(map-get($bk-dark, 'material'));
+@include mat.list-theme(map-get($bk-dark, 'material'));
+@include mat.autocomplete-theme(map-get($bk-dark, 'material'));
+@include mat.progress-bar-theme(map-get($bk-dark, 'material'));
+@include mat.sidenav-theme(map-get($bk-dark, 'material'));
+@include mat.menu-theme(map-get($bk-dark, 'material'));
+@include mat.checkbox-theme(map-get($bk-dark, 'material'));
+@include mat.tabs-theme(map-get($bk-dark, 'material'));
+@include mat.badge-theme(map-get($bk-dark, 'material'));

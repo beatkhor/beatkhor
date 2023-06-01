@@ -1,0 +1,55 @@
+@import 'abstracts/collector';
+@import 'themes/collector';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    line-height: 1.5;
+}
+
+body {
+    margin: 0;
+    overflow: none;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+@include for-tablet-portrait-up {
+    .container {
+        padding: 0;
+        width: 576px;
+    }
+}
+
+@include for-tablet-landscape-up {
+    .container {
+        width: 850px;
+        max-width: 100%;
+    }
+}
+
+@include for-desktop-up {
+    .container {
+        width: 1160px;
+    }
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
