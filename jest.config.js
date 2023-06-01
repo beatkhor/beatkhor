@@ -8,6 +8,7 @@ module.exports = {
         '!**/node_modules/**',
         '!**/vendor/**',
         '!**/models/**',
+        '!**/environments/**',
         '!./jest.config.js',
         '!**/src/main.ts',
         '!**/**module.ts'
