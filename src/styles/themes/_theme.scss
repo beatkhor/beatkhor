@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-$bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red-palette, 'dark');
+$bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red-palette);
 
 @include mat.button-theme(map-get($bk-dark, 'material'));
 @include mat.form-field-theme(map-get($bk-dark, 'material'));
