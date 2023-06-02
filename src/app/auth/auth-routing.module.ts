@@ -1,7 +1,24 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-const routes: Routes = [];
+import { SignInComponent } from './sign-in/sign-in.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'sign-in',
+  },
+  {
+    path: 'sign-in',
+    component: SignInComponent,
+    data: {
+      seo: {
+        title_en: 'Sign In | Beatkhor'
+      }
+    }
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

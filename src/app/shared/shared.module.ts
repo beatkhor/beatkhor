@@ -1,4 +1,3 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +11,6 @@ import { MaterialModule } from './material/material.module';
   imports: [
     CommonModule,
     MaterialModule,
-    BrowserAnimationsModule,
   ],
   exports: [
     MaterialModule,

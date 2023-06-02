@@ -18,8 +18,5 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule,
     HttpClientModule,
   ],
-  exports: [
-    HttpClientModule
-  ]
 })
 export class CoreModule { }
