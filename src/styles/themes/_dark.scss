@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 
+@use '../../app/auth/theme' as auth;
+
 .dark-theme {
     color: rgba(#fff, 0.95);
     background-color: #1c1c1c;
@@ -45,4 +47,6 @@
     @include mat.checkbox-color(map-get($bk-dark, 'material'));
     @include mat.tabs-color(map-get($bk-dark, 'material'));
     @include mat.badge-color(map-get($bk-dark, 'material'));
+
+    @include auth.color(map-get($bk-dark, 'material'));
 }

@@ -1,4 +1,7 @@
 @use '@angular/material' as mat;
+
+@use '../../app/auth/theme' as auth;
+
 @include mat.core();
 
 $bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red-palette);
@@ -18,3 +21,5 @@ $bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red
 @include mat.checkbox-theme(map-get($bk-dark, 'material'));
 @include mat.tabs-theme(map-get($bk-dark, 'material'));
 @include mat.badge-theme(map-get($bk-dark, 'material'));
+
+@include auth.theme(map-get($bk-dark, 'material'));

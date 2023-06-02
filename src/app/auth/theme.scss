@@ -1,0 +1,15 @@
+@use './shared/auth-container/auth-container.component' as auth-container;
+@use './shared/auth-content/auth-content.component' as auth-content;
+@use './shared/auth-footer/auth-footer.component' as auth-footer;
+
+@mixin theme($theme) {
+    @include auth-container.theme($theme);
+    @include auth-content.theme($theme);
+    @include auth-footer.theme($theme);
+}
+
+@mixin color($theme) {
+    @include auth-container.color($theme);
+    @include auth-content.color($theme);
+    @include auth-footer.color($theme);
+}

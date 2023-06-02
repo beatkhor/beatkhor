@@ -53,3 +53,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
+mat-hint,
+mat-error {
+    font-size: 0.78em;
+    opacity: 0.9;
+    margin-top: 4px;
+    font-weight: 400;
+}

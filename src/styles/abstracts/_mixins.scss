@@ -3,7 +3,7 @@
 @function create-dark-bk-theme($primary-palette, $accent-palette, $warn-palette) {
     $material-primary: mat.define-palette($primary-palette);
     $material-accent: mat.define-palette($accent-palette, A200, A100, A400);
-    $material-warn: mat.define-palette($warn-palette);
+    $material-warn: mat.define-palette($warn-palette, 400, A100, A400);
 
     $material-theme: mat.define-dark-theme((color: (primary: $material-primary,
                 accent: $material-accent,
