@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'lb-navbar',
+  selector: 'bk-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   encapsulation: ViewEncapsulation.None,

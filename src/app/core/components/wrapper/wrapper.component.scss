@@ -1,0 +1,22 @@
+.lb-sidenav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #151515;
+    overscroll-behavior: contain;
+}
+
+.mat-sidenav {
+    width: 250px;
+}
+
+.mat-sidenav-content {
+    padding-top: 64px;
+}
+
+.lb-navbar__right-menu {
+    display: flex;
+    align-items: stretch;
+}
