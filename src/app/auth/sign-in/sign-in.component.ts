@@ -36,7 +36,7 @@ export class SignInComponent {
 
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
-      return this.snackbar.error('Please fill the form with valid information!')
+      return this.form.markAsTouched();
     }
 
     try {

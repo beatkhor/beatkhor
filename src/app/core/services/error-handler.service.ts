@@ -19,10 +19,12 @@ export class CustomErrorHandler {
     if (err?.error?.message) {
       const message: string = err?.error?.message;
 
+
       if (Object.keys(this.messages).includes(message)) {
         const msg = this.messages[message];
         if (msg) {
           this.snackbar.error(msg);
+          return;
         }
       }
 

@@ -1,7 +1,7 @@
 export const messages = {
     'can_not_modify_super_user': 'You are not allowed to update super user!',
     'invalid_body': 'You are sending invalid information!',
-    'invalid_credentials': 'The credentials are incorrect!',
+    'invalid_credentials': 'The username and password do not match!',
     'internal_server_error': 'OOps something went wrong! Please try again later.',
     'not_found': 'We could not find this item!',
     'not_authorized': 'You are not authorized to access this content!',
