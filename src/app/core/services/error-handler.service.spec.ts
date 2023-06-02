@@ -22,4 +22,24 @@ describe('CustomErrorHandlerService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should show the description of an error in snackbar', () => {
+    const errorMock = {
+      error: {
+        message: 'invalid_body'
+      }
+    } as any;
+    service.handle(errorMock);
+    expect(snackBarMock.open).toHaveBeenCalledWith('You are sending invalid information!');
+  });
+
+  it('should show error for an unknown error message', () => {
+    const errorMock = {
+      error: {
+        message: '---'
+      }
+    } as any;
+    service.handle(errorMock);
+    expect(snackBarMock.open).toHaveBeenCalledWith('OOps! something went wrong! Please try again later!');
+  });
 });
