@@ -1,0 +1,22 @@
+<div class="lb-navbar">
+    <div class="container lb-navbar__content">
+        <div class="left-side">
+            <div class="center">
+                <button class="menu-btn" mat-icon-button (click)="onMenu()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+
+            <a class="lb-navbar__brand" routerLink="/">
+                <img src="assets/images/logo-dark.svg" alt="Beatkhor">
+                <strong>Beatkhor</strong>
+            </a>
+
+            <ng-content select=".lb-navbar__menu-list"></ng-content>
+        </div>
+
+        <ng-content select=".lb-navbar-actions"></ng-content>
+        <ng-content select=".lb-user-info"></ng-content>
+        <ng-content select=".lb-navbar__right-menu"></ng-content>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+@import 'abstracts/mixins';
+
+.lb-navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: 56px;
+    position: fixed;
+
+    &__content {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+
+        .left-side {
+            display: flex;
+            align-items: stretch;
+
+            .menu-btn {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        img {
+            width: 24px;
+            border-radius: 50%;
+            margin-right: 24px;
+        }
+
+        strong {
+            color: rgba(#fff, 0.9);
+            margin-right: 24px;
+        }
+    }
+
+    &__menu-list {
+        display: none;
+        padding: 0 24px;
+        align-items: stretch;
+    }
+
+    .lb-navbar-actions {
+        display: none;
+        align-items: stretch;
+    }
+
+    .lb-navbar-option {
+        display: flex;
+        padding: 0 16px;
+        font-size: 0.9em;
+        align-items: center;
+        text-decoration: none;
+        justify-content: center;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        transition: all ease-out 100ms;
+    }
+
+    .lb-user-info {
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        margin-right: -16px;
+
+        mat-icon {
+            margin-left: 8px;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .lb-navbar {
+        &__content {
+            .left-side {
+                .menu-btn {
+                    display: none;
+                }
+            }
+        }
+
+        &__menu-list {
+            display: flex;
+        }
+
+        .lb-navbar-actions {
+            display: flex;
+        }
+    }
+}
+
+@mixin theme($theme) {}
+
+@mixin color($theme) {
+    .lb-navbar {
+        background-color: rgb(22, 22, 22);
+        -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.19);
+        box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.19);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.095);
+
+        .lb-navbar-option {
+            color: rgba(#fff, 0.8);
+
+            &:hover {
+                color: white;
+                background-color: rgba(#fff, 0.1);
+            }
+        }
+
+        .lb-user-info {
+            color: rgba(#fff, 0.8);
+
+            &:hover {
+                color: white;
+                background-color: rgba(#fff, 0.1);
+            }
+        }
+    }
+}
