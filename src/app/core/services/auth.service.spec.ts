@@ -13,7 +13,7 @@ describe('AuthService', () => {
   let localStorageServiceMock: LocalStorageService;
 
   beforeEach(() => {
-    localStorageServiceMock = { read: jest.fn(), clear: jest.fn() } as any;
+    localStorageServiceMock = { read: jest.fn(), clear: jest.fn(), write: jest.fn(), } as any;
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -42,6 +42,11 @@ describe('AuthService', () => {
   it('should read user data using storage service', () => {
     service.getLoggedInUser();
     expect(localStorageServiceMock.read).toHaveBeenCalledTimes(6);
+  });
+
+  it('should read user data using storage service', () => {
+    service.putLoggedInUser({});
+    expect(localStorageServiceMock.write).toHaveBeenCalledTimes(6);
   });
 
   it('should login using credentials', () => {

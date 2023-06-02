@@ -7,4 +7,5 @@ export enum StorageKeys {
     UserRoleId = 'user-role-id',
     UserStatus = 'user-status',
     UserUsername = 'user-username',
+    UserNickname = 'user-nickname',
 }

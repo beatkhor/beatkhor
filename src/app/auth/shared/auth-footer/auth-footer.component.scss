@@ -1,0 +1,20 @@
+.bk-auth-footer {
+    p {
+        margin: 8px 0;
+    }
+}
+
+@mixin theme($theme) {
+    .bk-auth-footer a {
+        $primaryPalette: map-get($theme, 'primary');
+        color: map-get($primaryPalette, 500);
+    }
+}
+
+@mixin light-color($theme) {
+    .bk-auth-footer {
+        color: rgba($color: #000000, $alpha: 0.6);
+    }
+}
+
+@mixin dark-color($theme) {}

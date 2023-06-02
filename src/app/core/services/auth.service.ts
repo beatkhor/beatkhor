@@ -37,8 +37,29 @@ export class AuthService {
       last_name: this.localStorageService.read(StorageKeys.UserLastName) || '',
       role_id: Number(this.localStorageService.read(StorageKeys.UserRoleId) || 0),
       username: this.localStorageService.read(StorageKeys.UserUsername) || '',
-      nickname: this.localStorageService.read(StorageKeys.UserFirstName) || '',
+      nickname: this.localStorageService.read(StorageKeys.UserNickname) || '',
     };
+  }
+
+  /**
+   * Sets user information in local storage
+   * @param user information to be stored
+   */
+  putLoggedInUser(user: User): void {
+    this.localStorageService.write(StorageKeys.UserId, String(user.id));
+    this.localStorageService.write(StorageKeys.UserFirstName, user.first_name || '');
+    this.localStorageService.write(StorageKeys.UserLastName, user.last_name || '');
+    this.localStorageService.write(StorageKeys.UserRoleId, String(user.role_id));
+    this.localStorageService.write(StorageKeys.UserUsername, user.username || '');
+    this.localStorageService.write(StorageKeys.UserNickname, user.nickname || '');
+  }
+
+  /**
+   * Set authorization token used for sending http requests
+   * @param token received from backend
+   */
+  setToken(token: string): void {
+    this.localStorageService.write(StorageKeys.AuthToken, token);
   }
 
   /**

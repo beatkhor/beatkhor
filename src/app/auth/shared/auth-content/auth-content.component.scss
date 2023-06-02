@@ -1,0 +1,19 @@
+.bk-auth-content {
+    width: 380px;
+    max-width: 100%;
+    padding: 0 16px;
+
+    >form {
+        display: flex;
+        margin: 24px 0;
+        flex-direction: column;
+
+        mat-form-field {
+            margin-bottom: 24px;
+        }
+
+        >button[type=submit] {
+            margin: 8px 0;
+        }
+    }
+}
