@@ -18,11 +18,14 @@ export class CustomErrorHandler {
   handle(err: HttpErrorResponse) {
     if (err?.error?.message) {
       const message: string = err?.error?.message;
-      const msg = this.messages[message];
 
-      if (msg) {
-        this.snackbar.error(msg);
+      if (Object.keys(this.messages).includes(message)) {
+        const msg = this.messages[message];
+        if (msg) {
+          this.snackbar.error(msg);
+        }
       }
+
     }
 
     this.snackbar.error('OOps! something went wrong! Please try again later!');
