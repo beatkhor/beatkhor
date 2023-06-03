@@ -1,6 +1,7 @@
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 
 import { SeoService } from './core/services/seo.service';
 import { AuthService } from './core/services/auth.service';
@@ -18,9 +19,25 @@ export class AppComponent implements OnInit{
     private authService: AuthService,
   ) { }
 
-
   ngOnInit(): void {
+    this.checkUserProfile();
     this.setupSeo();
+  }
+
+  async checkUserProfile(): Promise<void> {
+    if (!this.authService.getToken()) {
+      return;
+    }
+
+    try {
+      const request$ = this.authService.getMe();
+      const response = await lastValueFrom(request$);
+
+      if (!response.result.profile_completed) {
+        this.router.navigate(['routine', 'complete-profile']);
+      }
+    } catch (error) {
+    }
   }
 
   private setupSeo() {

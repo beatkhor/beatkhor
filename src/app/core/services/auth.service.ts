@@ -7,7 +7,7 @@ import { LocalStorageService } from './local-storage.service';
 import { LoginResponseDTO } from '../models/authentication';
 import { StorageKeys } from '../models/storage-keys';
 import { CustomResponse } from '../models/response';
-import { User } from '../models/user';
+import { MyUser, User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -87,6 +87,13 @@ export class AuthService {
    */
   register(email: string, password: string): Observable<CustomResponse<void>> {
     return this.http.post<CustomResponse<void>>(`${environment.authServiceURL}/auth/register`, { email, password });
+  }
+
+  /**
+   * Get all the current user's profile information
+   */
+  getMe(): Observable<CustomResponse<MyUser>> {
+    return this.http.get<CustomResponse<any>>(`${environment.authServiceURL}/users/me`);
   }
 
   /**
