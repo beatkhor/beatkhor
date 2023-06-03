@@ -1,0 +1,9 @@
+@use './header/header.component' as index-header;
+
+@mixin theme($theme) {
+    @include index-header.theme($theme);
+}
+
+@mixin color($theme) {
+    @include index-header.color($theme);
+}

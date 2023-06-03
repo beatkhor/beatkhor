@@ -1,0 +1,39 @@
+@import 'abstracts/mixins';
+
+.post-grid-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        font-size: 1.13em;
+        margin-right: 24px;
+        color: rgba(255, 255, 255, 0.922);
+    }
+
+    .header-divider {
+        flex: 10;
+        height: 0.02em;
+        background-color: rgba(255, 255, 255, 0.119);
+    }
+
+    a.actions-desktop {
+        display: none;
+    }
+}
+
+@include for-tablet-landscape-up {
+    .post-grid-header {
+        min-height: 36px;
+        
+        a.actions-desktop {
+            display: inline-block;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .87em;
+        }
+    }
+}

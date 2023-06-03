@@ -1,0 +1,124 @@
+@import 'abstracts/mixins';
+
+.footer {
+    &__content {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        color: rgba(255, 255, 255, 0.705);
+
+        > div {
+            flex: 1;
+
+            h4 {
+                text-align: center;
+                margin-top: 0;
+                font-weight: 500;
+                margin-bottom: 24px;
+                color: rgba(255, 255, 255, 0.861);
+            }
+        }
+    }
+
+    &__list-grid {
+        padding: 0;
+        gap: 8px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        justify-content: center;
+
+        a {
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: all ease-out 100ms;
+            color: rgba(255, 255, 255, 0.705);
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        > div {
+            flex: 1;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__description {
+        text-align: center;
+
+        p {
+            line-height: 1.6;
+        }
+    }
+}
+
+.footer-wrapper {
+    padding: 48px 0;
+    margin-top: 48px + 16px;
+    background-color: rgba(255, 255, 255, 0.088);
+}
+
+@include for-tablet-landscape-up {
+    .footer {
+        &__content {
+            flex-direction: column;
+
+            > div {
+                h4 {
+                    text-align: unset;
+                }
+            }
+        }
+
+        &__list-grid {
+            display: grid;
+            gap: 8px 24px;
+            grid-template-rows: auto;
+            grid-template-columns: repeat(2, 71px);
+            justify-content: unset;
+        }
+
+        &__links {
+            flex-direction: row;
+            margin-bottom: 24px;
+
+            > div {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__description {
+            text-align: unset;
+        }
+    }
+}
+
+@include for-desktop-up {
+    .footer {
+        &__content {
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        &__links {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@mixin theme($theme) {
+    .footer {
+        &__list-grid {
+            a {
+                &:hover {
+                    $primaryPalette: map-get($theme, 'primary');
+                    color: map-get($primaryPalette, 500) !important;
+                }
+            }
+        }
+    }
+}

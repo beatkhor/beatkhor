@@ -1,0 +1,37 @@
+@import 'abstracts/mixins';
+
+:host {
+    display: block;
+}
+
+.post-grid-container {
+    gap: 24px;
+    display: grid;
+    margin-bottom: 32px;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@include for-tablet-landscape-up {
+    .post-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+
+        &.compact {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@include for-desktop-up {
+    .post-grid-container {
+        grid-template-columns: repeat(5, 1fr);
+
+        &.compact {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

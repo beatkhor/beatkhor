@@ -1,4 +1,4 @@
-.lb-sidenav-container {
+.bk-sidenav-container {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -16,7 +16,10 @@
     padding-top: 64px;
 }
 
-.lb-navbar__right-menu {
+.bk-navbar__right-menu {
     display: flex;
     align-items: stretch;
 }
+
+@mixin theme($theme) {}
+@mixin color($theme) {}

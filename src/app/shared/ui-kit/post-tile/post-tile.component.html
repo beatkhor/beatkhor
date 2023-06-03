@@ -1,0 +1,20 @@
+<div class="post-tile">
+    <div class="post-tile__image">
+        <svg width="100%" viewBox="0 0 1 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1" height="1"/>
+        </svg>
+
+        <div *ngIf="image" class="post-tile__background">
+            <img [src]="image" [alt]="coverAlt">
+        </div>
+    
+        <div *ngIf="image" class="post-tile__image-container">
+            <img [src]="image" [alt]="coverAlt">
+        </div>
+    </div>
+
+    <div class="post-tile__information">
+        <div [class.demo]="!this.title">{{this.title || 'Loading...'}}</div>
+        <div [class.demo]="!this.subtitle" class="post-tile__subtitle">{{this.subtitle || 'Loading...'}}</div>
+    </div>
+</div>

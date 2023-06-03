@@ -1,0 +1,76 @@
+<div class="container">
+    <bk-header></bk-header>
+</div>
+
+<main class="container">
+    <bk-post-grid-container>
+        <bk-section-divider>
+            <div bk-section-divider-title>
+                <h2>Recommended Tracks</h2>
+            </div>
+
+            <div bk-section-divider-actions>
+                <a class="actions-desktop" routerLink="browse" [queryParams]="{'tags': 'recommended'}" mat-stroked-button>View More</a>
+            </div>
+        </bk-section-divider>
+
+        <bk-post-grid>
+            <ng-container *ngFor="let p of latestRecommendedPost">
+                <a [routerLink]="p | postLink" [@trackTileFadeIn]>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                </a>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+            </ng-container>
+        </bk-post-grid>
+    </bk-post-grid-container>
+
+    <bk-post-grid-container>
+        <bk-section-divider>
+            <div bk-section-divider-title>
+                <h2>Recent Trap Tracks</h2>
+            </div>
+
+            <div bk-section-divider-actions>
+                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'trap'}" mat-stroked-button>View More</a>
+            </div>
+        </bk-section-divider>
+
+        <bk-post-grid>
+            <ng-container *ngFor="let p of latestTrapPost">
+                <a [routerLink]="p | postLink" [@trackTileFadeIn]>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                </a>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+            </ng-container>
+        </bk-post-grid>
+    </bk-post-grid-container>
+
+    <bk-post-grid-container>
+        <bk-section-divider>
+            <div bk-section-divider-title>
+                <h2>Recent Drill Tracks</h2>
+            </div>
+
+            <div bk-section-divider-actions>
+                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'drill'}" mat-stroked-button>View More</a>
+            </div>
+        </bk-section-divider>
+
+        <bk-post-grid>
+            <ng-container *ngFor="let p of latestDrillPost">
+                <a [routerLink]="p | postLink" [@trackTileFadeIn]>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                </a>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+            </ng-container>
+        </bk-post-grid>
+    </bk-post-grid-container>
+</main>
+
+<bk-footer></bk-footer>

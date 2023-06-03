@@ -1,0 +1,25 @@
+<div class="index-header-container">
+    <div class="header-wrapper-desktop">
+        <div class="header-content-desktop">
+            <div class="header-content-desktop__tagline">
+                <span>
+                    <span>We promote</span>
+                </span>
+            </div>
+            <div class="header-content-desktop__description">
+                <p>
+                    Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!
+                </p>
+                <div class="header-content-desktop__actions">
+                    <a mat-flat-button routerLink="browse">Browse Tracks</a>
+                    <a *ngIf="!isLoggedIn" mat-raised-button color="primary" routerLink="/authentication">
+                        <span>Get Started</span>
+                    </a>
+                    <a *ngIf="isLoggedIn" mat-raised-button disabled color="primary" routerLink="/upload" class="upload-button">
+                        <span>Upload</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

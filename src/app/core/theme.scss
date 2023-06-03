@@ -1,0 +1,12 @@
+@use './components/navbar/navbar.component' as core-navbar;
+@use './components//wrapper/wrapper.component' as core-wrapper;
+
+@mixin theme($theme) {
+    @include core-navbar.theme($theme);
+    @include core-wrapper.theme($theme);
+}
+
+@mixin color($theme) {
+    @include core-navbar.color($theme);
+    @include core-wrapper.color($theme);
+}

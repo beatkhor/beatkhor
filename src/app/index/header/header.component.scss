@@ -1,0 +1,169 @@
+@import 'abstracts/mixins';
+
+.index-header-container {
+    margin: 0;
+
+    .header-wrapper-desktop {
+        padding: 32px 0;
+        border-radius: 3px;
+
+        display: flex;
+        justify-content: center;
+
+        .header-content-desktop {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            > div {
+                flex: 1;
+            }
+
+            p {
+                padding: 0 16px;
+                line-height: 1.8em;
+                color: rgba($color: #fff, $alpha: 0.95);
+            }
+
+            &__tagline {
+                display: flex;
+                font-size: 2em;
+                position: relative;
+                > span {
+                    margin-left: 0;
+                    display: inline-block;
+                    height: 200px;
+                    &::after {
+                        position: absolute;
+                        width: 200px;
+                        height: 200px;
+                        content: ' ';
+                        background: url("/assets/images/tagline-full.png") no-repeat;
+                        background-size: contain;
+                        transform: translateX(-50%);
+                    }
+
+                    > span {
+                        display: none;
+                    }
+                }
+            }
+
+            &__description {
+                text-align: center;
+            }
+
+            
+            &__actions {
+                padding: 24px;
+                padding-bottom: 0;
+                a {
+                    margin-right: 16px;
+                    margin-bottom: 16px;
+                    text-decoration: none;
+                    font-size: 0.87em;
+
+                    mat-icon {
+                        height: 10px;
+                        font-size: 1.3em;
+                        line-height: 10px;
+                    }
+                }
+
+                .upload-button {
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+
+@include for-tablet-landscape-up {
+    .index-header-container {
+        margin: 48px 0;
+        margin-bottom: 24px;
+
+        .header-wrapper-desktop {
+            border: 1px solid rgba($color: #fff, $alpha: 0.1);
+
+            .header-content-desktop {
+                align-items: stretch;
+                flex-direction: row;
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                    padding-right: 24px;
+                    margin-bottom: 24px;
+                }
+
+                &__tagline {
+                    display: flex;
+                    justify-content: center;
+                    > span {
+                        margin: 0;
+                        height: unset;
+                        &::after {
+                            width: 200px;
+                            height: 200px;
+                            background: url("/assets/images/tagline-full.png") no-repeat;
+                            background-size: contain;
+                            transform: translateX(-50%) translateY(-10%);
+                        }
+
+                        > span {
+                            display: none;
+                        }
+                    }
+                }
+
+                &__description {
+                    text-align: unset;
+                }
+
+                &__actions {
+                    padding: 0;
+                    padding-top: 8px;
+                }
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .index-header-container {
+        .header-wrapper-desktop {
+
+            .header-content-desktop {
+                &__tagline {
+                    justify-content: flex-start;
+                    > span {
+                        height: unset;
+                        margin-left: 15%;
+
+                        &::after {
+                            width: 280px;
+                            height: 280px;
+                            background: url("/assets/images/tagline.png") no-repeat;
+                            background-size: contain;
+                            top: -83px;
+                            transform: translateY(4%);
+                            right: 4%;
+                        }
+
+                        > span {
+                            display: block;
+                        }
+                    }
+                }
+
+                &__description {
+                    text-align: unset;
+                }
+            }
+        }
+    }
+}

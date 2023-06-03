@@ -1,4 +1,4 @@
-<mat-sidenav-container class="lb-sidenav-container">
+<mat-sidenav-container class="bk-sidenav-container">
     <mat-sidenav mode="over" [(opened)]="isSidenavOpen">
         <mat-nav-list>
             <a mat-list-item routerLink="/" (click)="isSidenavOpen = false">Home</a>
@@ -7,11 +7,11 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-menu #menu="matMenu">
-            <a mat-menu-item [routerLink]="'/u/' + user.username">
+            <a mat-menu-item disabled [routerLink]="'/u/' + user.username">
                 <mat-icon>person</mat-icon>
                 <span>Profile</span>
             </a>
-            <a mat-menu-item routerLink="/upload/track">
+            <a mat-menu-item disabled routerLink="/upload/track">
                 <mat-icon>upload</mat-icon>
                 <span>Upload</span>
             </a>
@@ -22,33 +22,33 @@
         </mat-menu>
         <bk-navbar (menu)="onMenu()">
 
-            <div class="lb-navbar__menu-list">
-                <a lb-navbar-option routerLink="/browse">Browse</a>
-                <a lb-navbar-option routerLink="/search">Search</a>
+            <div class="bk-navbar__menu-list">
+                <a bk-navbar-option routerLink="/browse">Browse</a>
+                <a bk-navbar-option routerLink="/search">Search</a>
             </div>
 
-            <div class="lb-navbar__right-menu">
-                <div *ngIf="!isLoggedIn" class="lb-navbar-actions">
-                    <a lb-navbar-option routerLink="/authentication/signin">Sign In</a>
-                    <a lb-navbar-option routerLink="/authentication/signup">Get Started</a>
-                    <a lb-navbar-option routerLink="/search">
+            <div class="bk-navbar__right-menu">
+                <div *ngIf="!isLoggedIn" class="bk-navbar-actions">
+                    <a bk-navbar-option routerLink="/authentication/signin">Sign In</a>
+                    <a bk-navbar-option routerLink="/authentication/signup">Get Started</a>
+                    <a bk-navbar-option routerLink="/search">
                         <mat-icon>search</mat-icon>
                     </a>
                 </div>
 
-                <div *ngIf="isLoggedIn" class="lb-user-info" [matMenuTriggerFor]="menu">
+                <div *ngIf="isLoggedIn" class="bk-user-info" [matMenuTriggerFor]="menu">
                     <mat-icon>person</mat-icon>
                     <mat-icon>arrow_drop_down</mat-icon>
                 </div>
             </div>
 
             <div>
-                <div *ngIf="isLoggedIn" class="lb-user-info" [matMenuTriggerFor]="menu">
+                <div *ngIf="isLoggedIn" class="bk-user-info" [matMenuTriggerFor]="menu">
                     <mat-icon>person</mat-icon>
                     <mat-icon>arrow_drop_down</mat-icon>
                 </div>
 
-                <div *ngIf="isLoggedIn" class="lb-navbar__menu-list-right">
+                <div *ngIf="isLoggedIn" class="bk-navbar__menu-list-right">
                     <!-- Logged In -->
                 </div>
             </div>

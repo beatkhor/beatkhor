@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 
 @use '../../app/auth/theme' as auth;
+@use '../../app/core/theme' as core;
 
 .dark-theme {
     color: rgba(#fff, 0.95);
@@ -31,22 +32,7 @@
         margin: 16px 0;
         border-bottom: 1px solid rgba(#fff, $alpha: 0.1);
     }
-
-    @include mat.core-color(map-get($bk-dark, 'material'));
-    @include mat.button-color(map-get($bk-dark, 'material'));
-    @include mat.form-field-color(map-get($bk-dark, 'material'));
-    @include mat.input-color(map-get($bk-dark, 'material'));
-    @include mat.snack-bar-color(map-get($bk-dark, 'material'));
-    @include mat.toolbar-color(map-get($bk-dark, 'material'));
-    @include mat.dialog-color(map-get($bk-dark, 'material'));
-    @include mat.list-color(map-get($bk-dark, 'material'));
-    @include mat.autocomplete-color(map-get($bk-dark, 'material'));
-    @include mat.progress-bar-color(map-get($bk-dark, 'material'));
-    @include mat.sidenav-color(map-get($bk-dark, 'material'));
-    @include mat.menu-color(map-get($bk-dark, 'material'));
-    @include mat.checkbox-color(map-get($bk-dark, 'material'));
-    @include mat.tabs-color(map-get($bk-dark, 'material'));
-    @include mat.badge-color(map-get($bk-dark, 'material'));
-
+    
     @include auth.color(map-get($bk-dark, 'material'));
+    @include core.color(map-get($bk-dark, 'material'));
 }
