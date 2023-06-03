@@ -1,0 +1,81 @@
+<bk-auth-container *ngIf="!done">
+    <bk-auth-content>
+        <h1>Sign Up</h1>
+        <p>
+            <span>Welcome to Beatkhor. </span>
+            <span>Please fill this form to create a shiny new account.</span>
+        </p>
+
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="text" spellcheck="false" name="email">
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-hint>We will send the activation link to this email.</mat-hint>
+                <mat-error>Please enter your email or username!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" name="password">
+                <mat-icon matSuffix>lock</mat-icon>
+                <mat-hint>A password should include at least 6 characters.</mat-hint>
+                <mat-error>Please enter at least 6 characters!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="confirmPassword" type="password" name="confirmPassword">
+                <mat-icon matSuffix>lock</mat-icon>
+                <mat-hint>Please type your password again to confirm</mat-hint>
+                <mat-error *ngIf="form.value.password && form.value.password !== form.value.confirmPassword">
+                    <span>The passwords do not match together</span>
+                </mat-error>
+                <mat-error *ngIf="!form.value.password">
+                    <span>Please enter your password</span>
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-flat-button color="primary" type="submit">
+                <span *ngIf="isLoading">Please wait...</span>
+                <span *ngIf="!isLoading">Register</span>
+            </button>
+        </form>
+        <bk-auth-footer>
+            <p>
+                <span>Already have an account? </span>
+                <a routerLink="/authentication/signin"> sign in now!</a>
+                <span>.</span>
+            </p>
+            <p>
+                <span>Have an account and forgotten your password? you can easily </span>
+                <a routerLink="/authentication/forgot">recover your password here</a>
+                <span>.</span>
+            </p>
+        </bk-auth-footer>
+    </bk-auth-content>
+</bk-auth-container>
+
+<bk-auth-container *ngIf="done">
+    <bk-auth-content>
+        <h1>
+            <span>One More Step...</span>
+        </h1>
+        <p>
+            <span>Congrats! We just sent you an email that contains the verification link.</span>
+            <span> You can sign in after activating your account.</span>
+        </p>
+
+        <a style="width: 100%; margin: 16px 0;" routerLink="/authentication/signin" mat-flat-button color="primary">
+            Let's Go back
+        </a>
+
+        <bk-auth-footer>
+            <p>
+                <span>Already verified your email? </span>
+                <a routerLink="/authentication/signin"> sign in now!</a>
+                <span>.</span>
+            </p>
+        </bk-auth-footer>
+    </bk-auth-content>
+</bk-auth-container>

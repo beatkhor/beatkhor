@@ -63,6 +63,13 @@ export class AuthService {
   }
 
   /**
+   * Read authorization token from storage
+   */
+  getToken(): string | null {
+    return this.localStorageService.read(StorageKeys.AuthToken);
+  }
+
+  /**
    * Send the credentials and receive the auth token and user profile
    * @param identifier The username or the email
    * @param password  User's password
@@ -70,6 +77,16 @@ export class AuthService {
    */
   login(identifier: string, password: string): Observable<CustomResponse<LoginResponseDTO>> {
     return this.http.post<CustomResponse<LoginResponseDTO>>(`${environment.authServiceURL}/auth/login`, { identifier, password });
+  }
+
+  /**
+   * 
+   * @param email Email to be used for registration
+   * @param password password to be used for account creation
+   * @returns http register request as observable
+   */
+  register(email: string, password: string): Observable<CustomResponse<void>> {
+    return this.http.post<CustomResponse<void>>(`${environment.authServiceURL}/auth/register`, { email, password });
   }
 
   /**

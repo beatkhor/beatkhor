@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: 'authentication',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
 ];

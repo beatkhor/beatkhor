@@ -2,22 +2,35 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SignupComponent } from './sign-up/sign-up.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'sign-in',
+    redirectTo: 'signin',
   },
   {
-    path: 'sign-in',
+    path: 'signin',
+    canActivate: [AuthGuard],
     component: SignInComponent,
     data: {
       seo: {
         title_en: 'Sign In | Beatkhor'
       }
     }
-  }
+  },
+  {
+    path: 'signup',
+    canActivate: [AuthGuard],
+    component: SignupComponent,
+    data: {
+      seo: {
+        title_en: 'Sign Up | Beatkhor'
+      }
+    }
+  },
 ];
 
 @NgModule({
