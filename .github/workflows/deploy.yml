@@ -38,6 +38,7 @@ jobs:
         name: Login to container registry
         uses: docker/login-action@v2
         with:
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - 
@@ -47,7 +48,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:latest-dev
-            ${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-dev
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
           build-args: |
             build_script=build:dev
