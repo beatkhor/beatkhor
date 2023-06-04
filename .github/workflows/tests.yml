@@ -2,13 +2,12 @@ name: Tests
 
 on:
   push:
-    branches: [ "main", "development", "development/*" ]
+    branches: ["development/*" ]
   pull_request:
-    branches: [ "main", "development", "development/*" ]
+    branches: ["development/*" ]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
