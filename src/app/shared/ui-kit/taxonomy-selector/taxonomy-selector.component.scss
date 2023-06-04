@@ -1,0 +1,36 @@
+.bk-taxonomy-selector {
+    padding: 4px 0;
+    font-size: .9em;
+    overflow-x: hidden;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    color: rgba($color: #fff, $alpha: .8);
+    background: rgba($color: #fff, $alpha: 0.03);
+    &__option {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.05);
+        }
+
+        .mat-checkbox-label {
+            margin-left: 8px;
+        }
+
+        .mdc-form-field, mat-checkbox, mat-checkbox label {
+            width: 100%;
+        }
+
+        mat-checkbox label {
+            padding: 8px 16px;
+        }
+        
+        mat-checkbox label .mat-checkbox-inner-container {
+            margin: auto 0;
+            margin-right: 4px;
+        }
+
+        &:hover {
+            color: white;
+            background: rgba($color: #fff, $alpha: 0.05);
+        }
+    }
+}

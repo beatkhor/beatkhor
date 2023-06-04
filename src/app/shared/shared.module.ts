@@ -12,6 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PostLinkPipe } from './pipes/post-link.pipe';
 import { UserNamePipe } from './pipes/user-name.pipe';
 import { NavbarOptionDirective } from './ui-kit/navbar-option/navbar-option.directive';
+import { TaxonomySelectorComponent, TaxonomySelectorOptionDirective } from './ui-kit/taxonomy-selector/taxonomy-selector.component';
+import { PaginationComponent } from './ui-kit/pagination/pagination.component';
+import { PostViewComponent } from './post-view/post-view.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,10 @@ import { NavbarOptionDirective } from './ui-kit/navbar-option/navbar-option.dire
     FooterComponent,
     UserNamePipe,
     NavbarOptionDirective,
+    TaxonomySelectorComponent,
+    PaginationComponent,
+    PostViewComponent,
+    TaxonomySelectorOptionDirective,
   ],
   imports: [
     CommonModule,
@@ -45,6 +52,13 @@ import { NavbarOptionDirective } from './ui-kit/navbar-option/navbar-option.dire
     FooterComponent,
     UserNamePipe,
     NavbarOptionDirective,
+    TaxonomySelectorComponent,
+    PaginationComponent,
+    PostViewComponent,
+    TaxonomySelectorOptionDirective,
+  ],
+  providers: [
+    DownloadLinkPipe
   ]
 })
 export class SharedModule { }

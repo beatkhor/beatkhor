@@ -1,0 +1,120 @@
+<div class="explore">
+    <div class="container explore__content">
+        <aside>
+            <bk-section-divider>
+                <div bk-section-divider-title>
+                    <h3>Genres</h3>
+                </div>
+            </bk-section-divider>
+
+            <div class="taxonomy-wrapper">
+                <bk-taxonomy-selector *ngIf="!loadingFilters">
+                    <ng-container *ngFor="let g of genres; index as i">
+                        <div *ngIf="i < genresListSize" bk-taxonomy-selector-option>
+                            <mat-checkbox color="primary" [(ngModel)]="g._selected" (change)="onFiltersChange()">{{g.title}}</mat-checkbox>
+                        </div>
+                    </ng-container>
+                </bk-taxonomy-selector>
+                <div [@trackTileFadeIn] *ngIf="loadingFilters" class="filters-loading-placeholder" [style.min-height]="(collapsedListLimit * 43) + 'px'"></div>
+
+                <button mat-stroked-button *ngIf="genresListSize === collapsedListLimit" (click)="genresListSize = genres.length">
+                    <span>More</span>
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+
+                <button mat-stroked-button *ngIf="genresListSize !== collapsedListLimit" (click)="genresListSize = collapsedListLimit">
+                    <span>Less</span>
+                    <mat-icon>expand_less</mat-icon>
+                </button>
+            </div>
+
+            <div class="taxonomy-wrapper">
+                <bk-section-divider>
+                    <div bk-section-divider-title>
+                        <h3>Attributes</h3>
+                    </div>
+                </bk-section-divider>
+
+                <bk-taxonomy-selector *ngIf="!loadingFilters">
+                    <ng-container *ngFor="let t of tags; index as i">
+                        <div *ngIf="i < tagsListSize" bk-taxonomy-selector-option>
+                            <mat-checkbox color="primary" [(ngModel)]="t._selected" (change)="onFiltersChange()">{{t.title}}</mat-checkbox>
+                        </div>
+                    </ng-container>
+                </bk-taxonomy-selector>
+                <div [@trackTileFadeIn] *ngIf="loadingFilters" class="filters-loading-placeholder" [style.min-height]="(collapsedListLimit * 43) + 'px'"></div>
+
+                <button mat-stroked-button *ngIf="tagsListSize === collapsedListLimit" (click)="tagsListSize = tags.length">
+                    <span>More</span>
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <button mat-stroked-button *ngIf="tagsListSize !== collapsedListLimit" (click)="tagsListSize = collapsedListLimit">
+                    <span>Less</span>
+                    <mat-icon>expand_less</mat-icon>
+                </button>
+            </div>
+        </aside>
+        <main>
+            <bk-post-grid-container>
+                <bk-section-divider>
+                    <div bk-section-divider-title>
+                        <h1>Browse Tracks</h1>
+                    </div>
+        
+                    <div bk-section-divider-actions class="section-devider-pagination">
+                        <bk-pagination [totalPages]="totalPages" [page]="page" (change)="onPageChange($event)"></bk-pagination>
+                    </div>
+                    <div bk-section-divider-actions class="filters-trigger">
+                        <button [class.active]="hasFilters" [color]="isMobileFiltersVisible ? 'primary' : ''" mat-icon-button (click)="toggleFiltersVisibility()">
+                            <mat-icon>filter_alt</mat-icon>
+                        </button>
+                    </div>
+                </bk-section-divider>
+
+                <div *ngIf="isMobileFiltersVisible" class="mobile-filters-container">
+                    <h3>Genres</h3>
+                    <bk-taxonomy-selector *ngIf="!loadingFilters">
+                        <ng-container *ngFor="let g of genres; index as i">
+                            <div *ngIf="i < genresListSize" bk-taxonomy-selector-option>
+                                <mat-checkbox color="primary" [(ngModel)]="g._selected" (change)="onFiltersChange()">{{g.title}}</mat-checkbox>
+                            </div>
+                        </ng-container>
+                    </bk-taxonomy-selector>
+
+                    <h3>Attributes</h3>
+                    <bk-taxonomy-selector *ngIf="!loadingFilters">
+                        <ng-container *ngFor="let t of tags; index as i">
+                            <div *ngIf="i < tagsListSize" bk-taxonomy-selector-option>
+                                <mat-checkbox color="primary" [(ngModel)]="t._selected" (change)="onFiltersChange()">{{t.title}}</mat-checkbox>
+                            </div>
+                        </ng-container>
+                    </bk-taxonomy-selector>
+                </div>
+        
+                <bk-post-grid [compact]="true">
+                    <ng-container *ngIf="!loading">
+                        <a *ngFor="let p of posts" [routerLink]="p | postLink" [@trackTileFadeIn]>
+                            <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                        </a>
+                    </ng-container>
+                    <ng-container *ngIf="loading">
+                        <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+                    </ng-container>
+                </bk-post-grid>
+
+                <div class="mobile-pagination">
+                    <bk-pagination [totalPages]="totalPages" [page]="page" (change)="onPageChange($event)"></bk-pagination>
+                </div>
+                
+                <bk-section-divider>       
+                    <div class="section-devider-pagination" bk-section-divider-actions>
+                        <bk-pagination [totalPages]="totalPages" [page]="page" (change)="onPageChange($event)"></bk-pagination>
+                    </div>
+
+                </bk-section-divider>
+            </bk-post-grid-container>
+        </main>
+    </div>
+</div>
+
+<bk-footer></bk-footer>

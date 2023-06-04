@@ -1,0 +1,12 @@
+<div class="bk-pagination">
+    <div>{{pageText}}</div>
+    <button mat-icon-button (click)="onPrevious()" [disabled]="page == 1">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+    <input type="number" [value]="page" (keyup)="onPageChange($event)" (focusout)="onFocusOut($event)">
+    <button mat-icon-button (click)="onNext()" [disabled]="page == totalPages">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+    <div>out of </div>
+    <div class="bk-pagination__total">{{totalPages}}</div>
+</div>

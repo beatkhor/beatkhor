@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -16,6 +17,7 @@ const modules = [
   ReactiveFormsModule,
   MatFormFieldModule,
   MatSnackBarModule,
+  MatCheckboxModule,
   MatSidenavModule,
   MatTooltipModule,
   MatDialogModule,

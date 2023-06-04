@@ -17,6 +17,10 @@ const routes: Routes = [
         pathMatch: 'full',
         loadChildren: () => import('./index/index.module').then(m => m.IndexModule),
       },
+      {
+        path: 'browse',
+        loadChildren: () => import('./browse/browse.module').then(m => m.BrowseModule),
+      },
     ]
   }
 ];

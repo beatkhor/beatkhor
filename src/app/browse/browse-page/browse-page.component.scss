@@ -1,0 +1,124 @@
+@import 'abstracts/mixins';
+
+.explore {
+    padding-top: 0;
+    
+    &__content {
+        gap: 32px;
+        display: flex;
+        align-items: stretch;
+
+        main {
+            flex: 4;
+
+            .section-devider-pagination {
+                display: none;
+            }
+
+            .mobile-pagination {
+                display: flex;
+                margin-bottom: 24px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .filters-trigger {
+                display: block;
+                margin-left: 16px;
+                color: rgba($color: #fff, $alpha: 0.9);
+
+                > button.active::after {
+                    content: ' ';
+                    position: absolute;
+                    right: 4px;
+                    top: 4px;
+                    background: #ffc107;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                }
+            }
+
+            .mobile-filters-container {
+                padding: 4px 16px;
+                margin-bottom: 16px;
+                border-left: 3px solid rgba(255, 255, 255, 0.304);
+                background-color: rgba(255, 255, 255, 0.03);
+                h3 {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        aside {
+            // Hide sidebar on phone
+            display: none;
+
+            .taxonomy-wrapper {
+                margin-bottom: 32px;
+                margin-top: 28px;
+
+                > button {
+                    width: 100%;
+                    color: rgba($color: #fff, $alpha: 0.8);
+    
+                    mat-icon {
+                        font-size: 1.2em;
+                        line-height: 16px;
+                        height: 13px;
+                    }
+    
+                    &:hover {
+                        color: rgba($color: #fff, $alpha: 0.9);
+                    }
+                }
+            }
+
+            .filters-loading-placeholder {
+                margin-bottom: 16px;
+                background: rgba($color: #fff, $alpha: 0.03);
+            }
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .explore {
+        padding-top: 24px;
+
+        main {
+            .section-devider-pagination {
+                display: block;
+            }
+
+            .filters-trigger {
+                display: none;
+            }
+
+            .mobile-pagination {
+                display: none;
+            }
+        }
+
+        &__content {
+            aside {
+                flex: 1.4;
+                display: block;
+                padding: 24px 0;
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .explore {
+        &__content {
+            aside {
+                flex: 1;
+            }
+        }
+    }
+}
+
+@mixin color($theme) {}
+@mixin theme($theme) {}

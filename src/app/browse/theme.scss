@@ -1,0 +1,12 @@
+@use './browse-page/browse-page.component' as browse-page;
+@use './track-page/track-page.component' as track-page;
+
+@mixin theme($theme) {
+    @include browse-page.theme($theme);
+    @include track-page.theme($theme);
+}
+
+@mixin color($theme) {
+    @include browse-page.color($theme);
+    @include track-page.color($theme);
+}

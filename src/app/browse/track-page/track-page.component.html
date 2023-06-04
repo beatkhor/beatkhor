@@ -1,0 +1,24 @@
+<div class="container">
+   <bk-post-view [@trackTileFadeIn] *ngIf="!loading" [post]="post"></bk-post-view>
+   <div *ngIf="loading" class="post-view-placeholder"></div>
+
+   <bk-post-grid-container>
+      <bk-section-divider>
+          <div bk-section-divider-title>
+              <h2>Recent Related Tracks</h2>
+          </div>
+      </bk-section-divider>
+
+      <bk-post-grid>
+          <ng-container *ngFor="let p of latestRelatedPost">
+              <a *ngIf="!loadingRelatedPosts" [routerLink]="p | postLink" [@trackTileFadeIn]>
+                  <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+              </a>
+          </ng-container>
+          <ng-container *ngIf="loadingRelatedPosts">
+              <bk-post-tile *ngFor="let d of demoArr"></bk-post-tile>
+          </ng-container>
+      </bk-post-grid>
+  </bk-post-grid-container>
+</div>
+<bk-footer></bk-footer>

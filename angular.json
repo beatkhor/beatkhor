@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "wavesurfer.js"
+            ],
             "outputPath": "dist/beatkhor",
             "index": "src/index.html",
             "main": "src/main.ts",

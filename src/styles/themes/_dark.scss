@@ -2,6 +2,7 @@
 
 @use '../../app/auth/theme' as auth;
 @use '../../app/core/theme' as core;
+@use '../../app/browse/theme' as browse;
 
 .dark-theme {
     color: rgba(#fff, 0.95);
@@ -35,4 +36,5 @@
     
     @include auth.color(map-get($bk-dark, 'material'));
     @include core.color(map-get($bk-dark, 'material'));
+    @include browse.color(map-get($bk-dark, 'material'));
 }

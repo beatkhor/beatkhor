@@ -2,6 +2,7 @@
 
 @use '../../app/auth/theme' as auth;
 @use '../../app/auth/theme' as core;
+@use '../../app/browse/theme' as browse;
 
 @include mat.core();
 
@@ -10,3 +11,4 @@ $bk-dark: create-dark-bk-theme($bk-amber-palette, $bk-blue-grey-palette, $bk-red
 @include mat.all-component-themes(map-get($bk-dark, 'material'));
 @include auth.theme(map-get($bk-dark, 'material'));
 @include core.theme(map-get($bk-dark, 'material'));
+@include browse.theme(map-get($bk-dark, 'material'));
