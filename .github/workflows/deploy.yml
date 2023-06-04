@@ -25,6 +25,8 @@ jobs:
         name: package.json info
         id: info
         uses: jaywcjlove/github-action-package@main
+        with:
+          path: ./package.json
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
