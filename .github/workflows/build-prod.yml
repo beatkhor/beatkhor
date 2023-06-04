@@ -1,4 +1,4 @@
-name: Build
+name: Build Production
 
 env:
   REGISTRY: ghcr.io
