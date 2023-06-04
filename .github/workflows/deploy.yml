@@ -2,7 +2,7 @@ name: Deploy Development
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/main-webapp
+  IMAGE_NAME: ${{ github.repository }}
 
 on:
   push:
