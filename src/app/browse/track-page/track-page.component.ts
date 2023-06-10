@@ -56,6 +56,7 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
       
       this.loading = false;
     } catch (error: any) {
+      console.log(error);
       this.errHandler.handle(error);
     }
   }
