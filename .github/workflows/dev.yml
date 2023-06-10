@@ -89,7 +89,7 @@ jobs:
           key: ${{secrets.DEVELOPMENT_KEY}}
           script: |
             docker login -u ${{secrets.CI_ACCESS_USER}} -p ${{secrets.CI_ACCESS_TOKEN}} ghcr.io
-            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-dev
+            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
             docker stop ${{github.event.repository.name}} || true
             docker rm ${{github.event.repository.name}} || true
             docker run --restart=always -d -p ${{secrets.DEPLOYMENT_PORT}}:80 --name=${{github.event.repository.name}} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
