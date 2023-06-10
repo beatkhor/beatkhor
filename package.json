@@ -1,6 +1,6 @@
 {
   "name": "beatkhor",
-  "version": "0.0.8-alpha.2",
+  "version": "0.0.8-alpha.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
