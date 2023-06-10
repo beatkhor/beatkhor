@@ -94,7 +94,7 @@
                 <bk-post-grid [compact]="true">
                     <ng-container *ngIf="!loading">
                         <a *ngFor="let p of posts" [routerLink]="p | postLink" [@trackTileFadeIn]>
-                            <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                            <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                         </a>
                     </ng-container>
                     <ng-container *ngIf="loading">

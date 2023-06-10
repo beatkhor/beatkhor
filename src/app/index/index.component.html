@@ -17,7 +17,7 @@
         <bk-post-grid>
             <ng-container *ngFor="let p of latestRecommendedPost">
                 <a [routerLink]="p | postLink" [@trackTileFadeIn]>
-                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                 </a>
             </ng-container>
             <ng-container *ngIf="loading">
@@ -40,7 +40,7 @@
         <bk-post-grid>
             <ng-container *ngFor="let p of latestTrapPost">
                 <a [routerLink]="p | postLink" [@trackTileFadeIn]>
-                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                 </a>
             </ng-container>
             <ng-container *ngIf="loading">
@@ -63,7 +63,7 @@
         <bk-post-grid>
             <ng-container *ngFor="let p of latestDrillPost">
                 <a [routerLink]="p | postLink" [@trackTileFadeIn]>
-                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]="p.user | userName"></bk-post-tile>
+                    <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                 </a>
             </ng-container>
             <ng-container *ngIf="loading">

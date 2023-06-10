@@ -16,7 +16,7 @@
         <div class="post-view__track_name">
             <h1>{{post?.post_meta?.title}}</h1>
         </div>
-        <div class="post-view__user">{{userFullName}}</div>
+        <div class="post-view__user">{{ post?.post_meta?.overridden_artist_name || userFullName}}</div>
         <div class="post-view__player">
             <div id="waveform"></div>
         </div>
