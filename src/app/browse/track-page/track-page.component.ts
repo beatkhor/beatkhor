@@ -48,10 +48,12 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
 
       const firstGenre = this.post.genres[0];
       const postDisplayName = this.utilsService.getPostDisplayName(this.post);
-      this.seoService.updateTitle([firstGenre.title + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, 'Beatkhor'].join(' | '));
+      this.seoService.updateTitle([(firstGenre?.title || 'A') + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, 'Beatkhor'].join(' | '));
 
       if (this.post.genres.length) {
         this.getRelatedPosts(this.post.genres[0].slug);
+      } else {
+        this.getRelatedPosts();
       }
       
       this.loading = false;
@@ -61,11 +63,7 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
     }
   }
 
-  private async getRelatedPosts(genreSlug: string | undefined) {
-    if (!genreSlug) {
-      return;
-    }
-
+  private async getRelatedPosts(genreSlug?: string) {
     const relatedPostReq$ = this.postService.search({ pageSize: this.pageSize, genres: [{ slug: genreSlug }] });
 
     try {
