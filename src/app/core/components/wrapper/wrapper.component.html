@@ -31,9 +31,9 @@
                 <div *ngIf="!isLoggedIn" class="bk-navbar-actions">
                     <a bk-navbar-option routerLink="/authentication/signin">Sign In</a>
                     <!-- <a bk-navbar-option routerLink="/authentication/signup">Get Started</a> -->
-                    <a bk-navbar-option routerLink="/search">
+                    <!-- <a bk-navbar-option routerLink="/search">
                         <mat-icon>search</mat-icon>
-                    </a>
+                    </a> -->
                 </div>
 
                 <div *ngIf="isLoggedIn" class="bk-user-info" [matMenuTriggerFor]="menu">
