@@ -29,16 +29,16 @@
     <bk-post-grid-container>
         <bk-section-divider>
             <div bk-section-divider-title>
-                <h2>Recent Trap Tracks</h2>
+                <h2>Recent Drill Tracks</h2>
             </div>
 
             <div bk-section-divider-actions>
-                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'trap'}" mat-stroked-button>View More</a>
+                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'drill'}" mat-stroked-button>View More</a>
             </div>
         </bk-section-divider>
 
         <bk-post-grid>
-            <ng-container *ngFor="let p of latestTrapPost">
+            <ng-container *ngFor="let p of latestDrillPost">
                 <a [routerLink]="p | postLink" [@trackTileFadeIn]>
                     <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                 </a>
@@ -52,16 +52,16 @@
     <bk-post-grid-container>
         <bk-section-divider>
             <div bk-section-divider-title>
-                <h2>Recent Drill Tracks</h2>
+                <h2>Recent Trap Tracks</h2>
             </div>
 
             <div bk-section-divider-actions>
-                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'drill'}" mat-stroked-button>View More</a>
+                <a class="actions-desktop" routerLink="browse" [queryParams]="{'genres': 'trap'}" mat-stroked-button>View More</a>
             </div>
         </bk-section-divider>
 
         <bk-post-grid>
-            <ng-container *ngFor="let p of latestDrillPost">
+            <ng-container *ngFor="let p of latestTrapPost">
                 <a [routerLink]="p | postLink" [@trackTileFadeIn]>
                     <bk-post-tile [image]="p.pictures[0].thumbnail | downloadLink" [title]="p.post_meta.title" [subtitle]=" p.post_meta.overridden_artist_name || (p.user | userName)"></bk-post-tile>
                 </a>
