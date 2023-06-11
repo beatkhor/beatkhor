@@ -2,7 +2,8 @@
     <mat-sidenav mode="over" [(opened)]="isSidenavOpen">
         <mat-nav-list>
             <a mat-list-item routerLink="/" (click)="isSidenavOpen = false">Home</a>
-            <a mat-list-item routerLink="/upload/track" (click)="isSidenavOpen = false">Upload</a>
+            <a mat-list-item routerLink="/browse" (click)="isSidenavOpen = false">Browse</a>
+            <a mat-list-item routerLink="/authentication/signin" (click)="isSidenavOpen = false">Sign In</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
