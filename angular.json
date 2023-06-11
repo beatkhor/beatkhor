@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "beatkhor": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fa-IR": "src/locale/messages.fa.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +23,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "fa-IR"
+            ],
             "allowedCommonJsDependencies": [
               "wavesurfer.js"
             ],
