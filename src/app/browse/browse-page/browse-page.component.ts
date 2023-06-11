@@ -24,7 +24,7 @@ export class BrowsePageComponent implements OnInit {
   pageSize = 12;
   page = 0;
 
-  collapsedListLimit = 5;
+  collapsedListLimit = 6;
   genresListSize = this.collapsedListLimit;
   tagsListSize = this.collapsedListLimit;
 
