@@ -24,7 +24,7 @@ export class BrowsePageComponent implements OnInit {
   pageSize = 12;
   page = 0;
 
-  collapsedListLimit = 3;
+  collapsedListLimit = 5;
   genresListSize = this.collapsedListLimit;
   tagsListSize = this.collapsedListLimit;
 
@@ -42,7 +42,7 @@ export class BrowsePageComponent implements OnInit {
     private postService: PostService,
     private genreService: GenresService,
     private activatedRoute: ActivatedRoute,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.readParams();
