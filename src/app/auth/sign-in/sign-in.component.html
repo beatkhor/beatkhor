@@ -1,44 +1,47 @@
 <bk-auth-container>
     <bk-auth-content>
-        <h1>Sign In</h1>
+        <h1 i18n>Sign In</h1>
 
         <p>
-            <span>Welcome back! </span>
-            <span>Please provide your email and password to sign into your account.</span>
+            <span i18n>Welcome back! </span>
+            <span i18n>Please provide your email and password to sign into your account.</span>
         </p>
 
         <form [formGroup]="form" (submit)="onSubmit()">
             <mat-form-field appearance="fill">
-                <mat-label>Email / Username</mat-label>
+                <mat-label>
+                    <span i18n>Email</span> / 
+                    <span i18n>Username</span>
+                </mat-label>
                 <input matInput formControlName="username" type="text" spellcheck="false" name="username">
                 <mat-icon matSuffix>person</mat-icon>
-                <mat-hint>You can use your username or email to sign in</mat-hint>
-                <mat-error>Please enter your email or username!</mat-error>
+                <mat-hint i18n>You can use your username or email to sign in</mat-hint>
+                <mat-error i18n>Please enter your email or username!</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-                <mat-label>Password</mat-label>
+                <mat-label i18n>Password</mat-label>
                 <input matInput formControlName="password" type="password" name="password">
                 <mat-icon matSuffix>lock</mat-icon>
-                <mat-hint>A password should include at least 6 characters.</mat-hint>
-                <mat-error>Please enter at least 6 characters!</mat-error>
+                <mat-hint i18n>A password should include at least 6 characters.</mat-hint>
+                <mat-error i18n>Please enter at least 6 characters!</mat-error>
             </mat-form-field>
 
             <button mat-flat-button color="primary" type="submit">
-                <span *ngIf="isLoading">Please wait...</span>
-                <span *ngIf="!isLoading">Sign In</span>
+                <span *ngIf="isLoading" i18n>Please wait...</span>
+                <span *ngIf="!isLoading" i18n>Sign In</span>
             </button>
         </form>
 
         <bk-auth-footer>
             <!-- <p>
-                <span>Don't have a account yet? </span>
-                <a routerLink="/authentication/signup"> sign up now!</a>
+                <span i18n>Don't have a account yet? </span>
+                <a i18n routerLink="/authentication/signup"> sign up now!</a>
                 <span>.</span>
             </p> -->
             <p>
-                <span>If you have forgotten your password, you can easily </span>
-                <a routerLink="/authentication/forgot">recover your password here</a>
+                <span i18n>If you have forgotten your password, you can easily </span>
+                <a i18n routerLink="/authentication/forgot">recover your password here</a>
                 <span>.</span>
             </p>
         </bk-auth-footer>

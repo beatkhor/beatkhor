@@ -14,7 +14,13 @@
     </div>
 
     <div class="post-tile__information">
-        <div [class.demo]="!this.title">{{this.title || 'Loading...'}}</div>
-        <div [class.demo]="!this.subtitle" class="post-tile__subtitle">{{this.subtitle || 'Loading...'}}</div>
+        <div [class.demo]="!title">
+            <span *ngIf="title">{{title}}</span>
+            <span *ngIf="!title" i18n>Loading...</span>
+        </div>
+        <div [class.demo]="!this.subtitle" class="post-tile__subtitle">
+            <span *ngIf="subtitle">{{subtitle}}</span>
+            <span *ngIf="!subtitle" i18n>Loading...</span>
+        </div>
     </div>
 </div>

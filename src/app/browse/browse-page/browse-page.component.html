@@ -3,7 +3,7 @@
         <aside>
             <bk-section-divider>
                 <div bk-section-divider-title>
-                    <h3>Genres</h3>
+                    <h3 i18n>Genres</h3>
                 </div>
             </bk-section-divider>
 
@@ -18,12 +18,12 @@
                 <div [@trackTileFadeIn] *ngIf="loadingFilters" class="filters-loading-placeholder" [style.min-height]="(collapsedListLimit * 43) + 'px'"></div>
 
                 <button mat-stroked-button *ngIf="genresListSize === collapsedListLimit" (click)="genresListSize = genres.length">
-                    <span>More</span>
+                    <span i18n>More</span>
                     <mat-icon>expand_more</mat-icon>
                 </button>
 
                 <button mat-stroked-button *ngIf="genresListSize !== collapsedListLimit" (click)="genresListSize = collapsedListLimit">
-                    <span>Less</span>
+                    <span i18n>Less</span>
                     <mat-icon>expand_less</mat-icon>
                 </button>
             </div>
@@ -31,7 +31,7 @@
             <div class="taxonomy-wrapper">
                 <bk-section-divider>
                     <div bk-section-divider-title>
-                        <h3>Attributes</h3>
+                        <h3 i18n>Attributes</h3>
                     </div>
                 </bk-section-divider>
 
@@ -45,11 +45,11 @@
                 <div [@trackTileFadeIn] *ngIf="loadingFilters" class="filters-loading-placeholder" [style.min-height]="(collapsedListLimit * 43) + 'px'"></div>
 
                 <button mat-stroked-button *ngIf="tagsListSize === collapsedListLimit" (click)="tagsListSize = tags.length">
-                    <span>More</span>
+                    <span i18n>More</span>
                     <mat-icon>expand_more</mat-icon>
                 </button>
                 <button mat-stroked-button *ngIf="tagsListSize !== collapsedListLimit" (click)="tagsListSize = collapsedListLimit">
-                    <span>Less</span>
+                    <span i18n>Less</span>
                     <mat-icon>expand_less</mat-icon>
                 </button>
             </div>
@@ -58,7 +58,7 @@
             <bk-post-grid-container>
                 <bk-section-divider>
                     <div bk-section-divider-title>
-                        <h1>Browse Tracks</h1>
+                        <h1 i18n>Browse Tracks</h1>
                     </div>
         
                     <div bk-section-divider-actions class="section-devider-pagination">
@@ -72,7 +72,7 @@
                 </bk-section-divider>
 
                 <div *ngIf="isMobileFiltersVisible" class="mobile-filters-container">
-                    <h3>Genres</h3>
+                    <h3 i18n>Genres</h3>
                     <bk-taxonomy-selector *ngIf="!loadingFilters">
                         <ng-container *ngFor="let g of genres; index as i">
                             <div *ngIf="i < genresListSize" bk-taxonomy-selector-option>
@@ -81,7 +81,7 @@
                         </ng-container>
                     </bk-taxonomy-selector>
 
-                    <h3>Attributes</h3>
+                    <h3 i18n>Attributes</h3>
                     <bk-taxonomy-selector *ngIf="!loadingFilters">
                         <ng-container *ngFor="let t of tags; index as i">
                             <div *ngIf="i < tagsListSize" bk-taxonomy-selector-option>
