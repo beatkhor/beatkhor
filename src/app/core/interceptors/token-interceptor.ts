@@ -31,7 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
         return next.handle(request).pipe(
             catchError(err => {
                 if (err.status == 403) {
-                    this.snackbar.error('You need to sign in to access this section!');
+                    this.snackbar.error($localize`You need to sign in to access this section!`);
                     this.authService.reset();
                     this.router.navigateByUrl('/');
                 }

@@ -17,7 +17,7 @@ const routes: Routes = [
     component: SignInComponent,
     data: {
       seo: {
-        title_en: 'Sign In | Beatkhor'
+        title_en: $localize`Sign In | Beatkhor`
       }
     }
   },
@@ -27,7 +27,7 @@ const routes: Routes = [
     component: SignupComponent,
     data: {
       seo: {
-        title_en: 'Sign Up | Beatkhor'
+        title_en: $localize`Sign Up | Beatkhor`
       }
     }
   },

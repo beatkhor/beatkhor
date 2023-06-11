@@ -8,11 +8,11 @@ const routes: Routes = [
     component: IndexComponent,
     data: {
       seo: {
-        title_en: 'Beatkhor | Publish And Download Beats',
+        title_en: $localize`Beatkhor | Publish And Download Beats`,
         metaTags_en: [
           {
             name: 'description',
-            content: 'Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!',
+            content: $localize`Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!`,
           }
         ]
       }

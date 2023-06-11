@@ -8,7 +8,7 @@ export class UserNamePipe implements PipeTransform {
 
   transform(value?: User): string {
     if (!value) {
-      return 'Unknown'
+      return $localize`Unknown`
     }
 
     let output = '';

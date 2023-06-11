@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnDestroy, OnInit } from '@angular/core';
 import { lastValueFrom, Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
@@ -30,6 +30,7 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
     private postService: PostService,
     private utilsService: UtilsService,
     private errHandler: CustomErrorHandler,
+    @Inject(LOCALE_ID) public locale: string
   ) { }
 
   ngOnInit(): void {
@@ -48,7 +49,12 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
 
       const firstGenre = this.post.genres[0];
       const postDisplayName = this.utilsService.getPostDisplayName(this.post);
-      this.seoService.updateTitle([(firstGenre?.title || 'A') + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, 'Beatkhor'].join(' | '));
+      
+      if (this.locale.includes('fa')) {
+        this.seoService.updateTitle(['بیت ' + (firstGenre?.title || 'ارسال شده') + ' به نام ' + this.post.post_meta.title + ' با آهنگسازی ' + postDisplayName, $localize`Beatkhor`].join(' | '));
+      } else {
+        this.seoService.updateTitle([(firstGenre?.title || 'A') + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, $localize`Beatkhor`].join(' | '));
+      }
 
       if (this.post.genres.length) {
         this.getRelatedPosts(this.post.genres[0].slug);

@@ -37,7 +37,7 @@ export class SignupComponent {
 
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
-      return this.snackbar.error('Please fill the form with valid information!')
+      return this.snackbar.error($localize`Please fill the form with valid information!`)
     }
 
     try {
@@ -52,7 +52,7 @@ export class SignupComponent {
       this.form.enable();
       this.isLoading = false;
       if ((error as any)?.error?.message === 'duplicated_entry') {
-        return this.snackbar.error('This email is already used by an account!', 'OK');
+        return this.snackbar.error($localize`This email is already used by an account!`, $localize`OK`);
       }
       this.errHandler.handle(error);
     }

@@ -36,8 +36,8 @@ export class WrapperComponent {
       width: '400px',
       autoFocus: false,
       data: {
-        title: 'Logout',
-        message: 'Are you sure about signing out of your account?'
+        title: $localize`Logout`,
+        message: $localize`Are you sure about signing out of your account?`
       }
     });
 

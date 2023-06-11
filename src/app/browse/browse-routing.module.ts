@@ -11,11 +11,11 @@ const routes: Routes = [
     component: BrowsePageComponent,
     data: {
       seo: {
-        title_en: 'Browse Beats | Beatkhor',
+        title_en: $localize`'Browse Beats | Beatkhor'`,
         metaTags_en: [
           {
-            name: 'description',
-            content: 'Browse, discover and download any type of beat for free. The most popular uploaded beat genres are Trap, Drill, Hiphop and Rap.',
+            name: $localize`description`,
+            content: $localize`Browse, discover and download any type of beat for free. The most popular uploaded beat genres are Trap, Drill, Hiphop and Rap.`,
           }
         ]
       }
