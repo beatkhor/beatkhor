@@ -65,7 +65,7 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest-dev
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}-dev
           build-args: |
-            build_script=build:dev
+            build_script=build:dev:ssr
     
   deploy:
     needs: build

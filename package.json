@@ -3,14 +3,16 @@
   "version": "0.0.17",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --configuration production",
+    "start": "npm run serve",
+    "serve": "ng serve",
+    "build:prod": "ng build --configuration production",
     "build:dev": "ng build --configuration development",
-    "watch": "ng build --watch --configuration development",
     "test": "ng test",
+
     "dev:ssr": "ng run beatkhor:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
-    "build:ssr": "ng build && ng run beatkhor:server",
+    "build:prod:ssr": "npm run build:prod && ng run beatkhor:server",
+    "build:dev:ssr": "npm run build:dev && ng run beatkhor:server",
     "prerender": "ng run beatkhor:prerender"
   },
   "private": true,
