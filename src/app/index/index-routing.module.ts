@@ -7,15 +7,7 @@ const routes: Routes = [
     path: '',
     component: IndexComponent,
     data: {
-      seo: {
-        title_en: 'Beatkhor | Publish And Download Beats',
-        metaTags_en: [
-          {
-            name: 'description',
-            content: 'Beatkhor is a community based platform to discover, publish and download free beats. Start browsing or upload your beat right now!',
-          }
-        ]
-      }
+      seo: {}
     }
   }
 ];
