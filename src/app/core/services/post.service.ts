@@ -33,7 +33,7 @@ export class PostService {
   }
 
   getPostByLink(link: string): Observable<CustomResponse<Post>> {
-    return this.http.get<CustomResponse<Post>>(environment.contentServiceURL + '/posts/' + link);
+    return this.http.get<CustomResponse<Post>>(environment.contentServiceURL + '/posts/' + encodeURI(link));
   }
 
   deletePost(postId: number): Observable<CustomResponse<any>> {

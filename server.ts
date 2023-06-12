@@ -3,7 +3,7 @@ import 'localstorage-polyfill'
 
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
-import express from 'express';
+import express, { urlencoded } from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
