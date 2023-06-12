@@ -21,7 +21,7 @@ export class BrowsePageComponent implements OnInit {
   posts: Post[] = [];
   loading = false;
   totalPages = 0;
-  pageSize = 12;
+  pageSize = 16;
   page = 0;
 
   collapsedListLimit = 6;
