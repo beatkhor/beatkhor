@@ -7,4 +7,8 @@ export const environment = {
     contentServiceURL: 'https://next.beatkhor.com/api/content',
     storageServiceURL: 'https://next.beatkhor.com/api/storage',
     messages,
+    seo: {
+        siteName: 'Beatkhor',
+        siteTitle: 'Discover and download beats!',
+    }
 };

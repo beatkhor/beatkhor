@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignupComponent } from './sign-up/sign-up.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { environment } from '@environments/environment';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
     component: SignInComponent,
     data: {
       seo: {
-        title_en: 'Sign In | Beatkhor'
+        title: 'Sign in to ' + environment.seo.siteName
       }
     }
   },
@@ -27,7 +28,7 @@ const routes: Routes = [
     component: SignupComponent,
     data: {
       seo: {
-        title_en: 'Sign Up | Beatkhor'
+        title: 'Join Beatkhor' + + environment.seo.siteName,
       }
     }
   },

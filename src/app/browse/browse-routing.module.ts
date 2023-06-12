@@ -11,13 +11,7 @@ const routes: Routes = [
     component: BrowsePageComponent,
     data: {
       seo: {
-        title_en: 'Browse Beats | Beatkhor',
-        metaTags_en: [
-          {
-            name: 'description',
-            content: 'Browse, discover and download any type of beat for free. The most popular uploaded beat genres are Trap, Drill, Hiphop and Rap.',
-          }
-        ]
+        title: 'Browse Beats',
       }
     }
   },
