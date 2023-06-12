@@ -65,7 +65,7 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.info.outputs.version }}
           build-args: |
-            build_script=build:prod:ssr
+            build_script=prerender
 
   deploy:
     needs: build
