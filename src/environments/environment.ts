@@ -9,6 +9,6 @@ export const environment = {
     messages,
     seo: {
         siteName: 'Beatkhor',
-        siteTitle: 'Discover and download beats!',
+        siteTitle: 'Discover and publish beats!',
     }
 };
