@@ -20,7 +20,7 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
   loadingRelatedPosts = false;
   post: Post | undefined;
   loading = false;
-  pageSize = 5;
+  pageSize = 10;
   demoArr = Array(this.pageSize);
   latestRelatedPost: Post[] = [];
 

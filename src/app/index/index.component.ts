@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit {
   latestDrillPost: Post[] = [];
   latestTrapPost: Post[] = [];
 
-  pageSize = 5;
+  pageSize = 10;
   loading = false;
   demoArr = Array(this.pageSize);
 
