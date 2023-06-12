@@ -3,10 +3,10 @@ import { messages } from './messages';
 export const environment = {
     production: true,
     storageKeyPrefix: 'bk',
-    siteURL: 'https://prod.beatkhor.com',
-    authServiceURL: 'https://prod.beatkhor.com/api/auth',
-    contentServiceURL: 'https://prod.beatkhor.com/api/content',
-    storageServiceURL: 'https://prod.beatkhor.com/api/storage',
+    siteURL: 'https://www.beatkhor.com',
+    authServiceURL: 'https://www.beatkhor.com/api/auth',
+    contentServiceURL: 'https://www.beatkhor.com/api/content',
+    storageServiceURL: 'https://www.beatkhor.com/api/storage',
     messages,
     seo: {
         siteName: 'Beatkhor',
