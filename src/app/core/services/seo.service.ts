@@ -13,29 +13,7 @@ export class SeoService {
     private meta: Meta,
     private title: Title,
     @Inject(DOCUMENT) private dom: Document,
-  ) {
-    const img = environment.seo.openGraph.image;
-
-    this.meta.addTag({
-      property: 'og:image',
-      content: environment.siteURL + img.image,
-    });
-
-    this.meta.addTag({
-      property: 'og:image:type',
-      content: img.type,
-    });
-
-    this.meta.addTag({
-      property: 'og:image:width',
-      content: img.width.toString(),
-    });
-
-    this.meta.addTag({
-      property: 'og:image:height',
-      content: img.height.toString(),
-    });
-  }
+  ) {}
 
   updateTitle(title: string) {
     this.title.setTitle(title);
@@ -58,8 +36,8 @@ export class SeoService {
     });
 
     this.meta.updateTag({
-      name: 'description',
-      content:meta.description || environment.seo.siteDescription,
+      property: 'og:site_name',
+      content: environment.seo.siteName,
     });
 
     this.meta.updateTag({
@@ -68,8 +46,35 @@ export class SeoService {
     });
 
     this.meta.updateTag({
+      name: 'description',
+      content:meta.description || environment.seo.siteDescription,
+    });
+
+    this.meta.updateTag({
       name: 'robots',
       content: meta.noIndex ? 'noindex' : 'index, follow',
+    });
+
+    const img = environment.seo.openGraph.image;
+
+    this.meta.addTag({
+      property: 'og:image',
+      content: environment.siteURL + img.image,
+    });
+
+    this.meta.addTag({
+      property: 'og:image:type',
+      content: img.type,
+    });
+
+    this.meta.addTag({
+      property: 'og:image:width',
+      content: img.width.toString(),
+    });
+
+    this.meta.addTag({
+      property: 'og:image:height',
+      content: img.height.toString(),
     });
 
     this.createCanonicalURL();
