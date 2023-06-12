@@ -18,13 +18,14 @@
         </div>
         <div class="post-view__user">{{ post?.post_meta?.overridden_artist_name || userFullName}}</div>
         <div class="post-view__player">
-            <div id="waveform"></div>
+            <!-- <div id="waveform"></div> -->
+            <audio controls [src]="this.firstAudio?.original | downloadLink"></audio>
         </div>
         <div class="post-view__details">
-            <button (click)="togglePlay()" class="play-button" mat-mini-fab color="primary">
+            <!-- <button (click)="togglePlay()" class="play-button" mat-mini-fab color="primary">
                 <mat-icon *ngIf="!playing">play_arrow</mat-icon>
                 <mat-icon *ngIf="playing">pause</mat-icon>
-            </button>
+            </button> -->
             <div class="information-desktop">
                 <div *ngIf="post?.genres?.length" class="genres">
                     <span class="info-title">Genre<span *ngIf="(post?.genres?.length || 0) > 1">s</span>: </span>

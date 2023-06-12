@@ -28,19 +28,19 @@ export class PostViewComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.pictureAlt = this.postService.generateFullName(this.post);
 
-    this.waveSurfer = WaveSurfer.create({
-      container: '#waveform',
-      barWidth: 3,
-      height: 70,
-      barRadius: 2,
-      normalize: false,
-    });
+    // this.waveSurfer = WaveSurfer.create({
+    //   container: '#waveform',
+    //   barWidth: 3,
+    //   height: 70,
+    //   barRadius: 2,
+    //   normalize: false,
+    // });
     
-    this.waveSurfer.load(this.downloadLinkPipe.transform(this.firstAudio?.original));
+    // this.waveSurfer.load(this.downloadLinkPipe.transform(this.firstAudio?.original));
 
-    this.waveSurfer.on('ready', () => {
-      this.isPlayerReady = true;
-    });
+    // this.waveSurfer.on('ready', () => {
+    //   this.isPlayerReady = true;
+    // });
   }
 
   get firstPicture(): Picture | undefined {
