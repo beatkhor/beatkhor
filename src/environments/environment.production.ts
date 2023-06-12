@@ -3,7 +3,7 @@ import { messages } from './messages';
 export const environment = {
     production: true,
     storageKeyPrefix: 'bk',
-    siteURL: 'https://www.beatkhor.com',
+    siteURL: 'https://prod.beatkhor.com',
     authServiceURL: 'https://prod.beatkhor.com/api/auth',
     contentServiceURL: 'https://prod.beatkhor.com/api/content',
     storageServiceURL: 'https://prod.beatkhor.com/api/storage',
