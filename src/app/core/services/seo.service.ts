@@ -55,6 +55,11 @@ export class SeoService {
       content: meta.noIndex ? 'noindex' : 'index, follow',
     });
 
+    this.meta.updateTag({
+      name: 'keywords',
+      content: environment.seo.keywords.join(', '),
+    });
+
     const img = environment.seo.openGraph.image;
 
     this.meta.addTag({

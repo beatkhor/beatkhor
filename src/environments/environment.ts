@@ -12,7 +12,7 @@ export const environment = {
         siteName: 'Beatkhor',
         siteTitle: 'Discover and publish beats!',
         siteDescription: 'Beatkhor is a community based platform to discover, publish and download beats. Start browsing or upload your beat right now!',
-        keywords: ['beat', 'download', 'free beat', 'publish beat'],
+        keywords: ['beat', 'download', 'free beat', 'publish beat', 'discover beat'],
         openGraph: {
             image: {
                 image: '/assets/seo/logo-1200x1200.png',

@@ -48,7 +48,8 @@ export class SingleTrackComponent implements OnInit, OnDestroy {
 
       const firstGenre = this.post.genres[0];
       const postDisplayName = this.utilsService.getPostDisplayName(this.post);
-      this.seoService.updateTitle([(firstGenre?.title || 'A') + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, 'Beatkhor'].join(' | '));
+      const title = [(firstGenre?.title || 'A') + ' beat called ' + this.post.post_meta.title + ' by ' + postDisplayName, 'Beatkhor'].join(' | ');
+      this.seoService.updateTags({ title });
 
       if (this.post.genres.length) {
         this.getRelatedPosts(this.post.genres[0].slug);
