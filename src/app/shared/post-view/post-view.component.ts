@@ -30,7 +30,6 @@ export class PostViewComponent implements OnInit, OnDestroy {
 
     this.waveSurfer = WaveSurfer.create({
       container: '#waveform',
-      ignoreSilenceMode: true,
       barWidth: 3,
       height: 70,
       barRadius: 2,
