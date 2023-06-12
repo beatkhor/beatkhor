@@ -12,7 +12,7 @@ import { Post } from '../../core/models/post';
   templateUrl: './post-view.component.html',
   styleUrls: ['./post-view.component.scss']
 })
-export class PostViewComponent implements OnInit {
+export class PostViewComponent implements OnInit, OnDestroy {
   @Input() post: Post | undefined;
   isPlayerReady = false;
   waveSurfer: any;
@@ -74,6 +74,12 @@ export class PostViewComponent implements OnInit {
   pause() {
     this.playing = false;
     this.waveSurfer.pause();
+  }
+
+  ngOnDestroy(): void {
+    if (this.waveSurfer) {
+      this.waveSurfer.destroy();
+    }
   }
 }
 
