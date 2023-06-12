@@ -53,8 +53,7 @@ export class AppComponent implements OnInit{
     ).subscribe(data => {
       let seoData = data['seo'];
       if (seoData) {
-        this.seoService.updateTitle(seoData['title_en']);
-        this.seoService.updateMetaTags(seoData['metaTags_en'] || []);
+        this.seoService.updateTags(seoData);
       }
     });
   }
