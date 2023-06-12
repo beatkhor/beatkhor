@@ -11,4 +11,4 @@ RUN npm run $build_script
 # Stage: Run
 FROM node:18-slim
 COPY --from=build /usr/src/app/dist .
-CMD ["node", "dist/server/main.js"]
+CMD ["node", "server/main.js"]
