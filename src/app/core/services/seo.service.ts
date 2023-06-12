@@ -17,22 +17,22 @@ export class SeoService {
     const img = environment.seo.openGraph.image;
 
     this.meta.addTag({
-      name: 'og:image',
+      property: 'og:image',
       content: environment.siteURL + img.image,
     });
 
     this.meta.addTag({
-      name: 'og:image:type',
+      property: 'og:image:type',
       content: img.type,
     });
 
     this.meta.addTag({
-      name: 'og:image:width',
+      property: 'og:image:width',
       content: img.width.toString(),
     });
 
     this.meta.addTag({
-      name: 'og:image:height',
+      property: 'og:image:height',
       content: img.height.toString(),
     });
   }
@@ -53,12 +53,17 @@ export class SeoService {
     }
 
     this.meta.updateTag({
-      name: 'og:title',
+      property: 'og:title',
       content: meta.title || environment.seo.siteTitle,
     });
 
     this.meta.updateTag({
       name: 'description',
+      content:meta.description || environment.seo.siteDescription,
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
       content:meta.description || environment.seo.siteDescription,
     });
 
