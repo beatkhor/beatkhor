@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'browse',
         loadChildren: () => import('./browse/browse.module').then(m => m.BrowseModule),
       },
+      {
+        path: 'about',
+        loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
+      }
     ]
   }
 ];
