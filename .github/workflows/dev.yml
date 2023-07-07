@@ -5,9 +5,6 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 on:
-  push:
-    branches:
-      - development
   pull_request:
     types: [closed]
     branches:
