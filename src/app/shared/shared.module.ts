@@ -15,6 +15,7 @@ import { NavbarOptionDirective } from './ui-kit/navbar-option/navbar-option.dire
 import { TaxonomySelectorComponent, TaxonomySelectorOptionDirective } from './ui-kit/taxonomy-selector/taxonomy-selector.component';
 import { PaginationComponent } from './ui-kit/pagination/pagination.component';
 import { PostViewComponent } from './post-view/post-view.component';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { PostViewComponent } from './post-view/post-view.component';
   imports: [
     CommonModule,
     MaterialModule,
+    RouterLink,
   ],
   exports: [
     MaterialModule,
